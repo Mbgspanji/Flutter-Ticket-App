@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_app/struck.dart';
 
-class AlertKreditCard extends StatelessWidget {
+class AlertKreditCard extends StatefulWidget {
   final String title;
   final String type;
   final String price;
@@ -14,6 +14,11 @@ class AlertKreditCard extends StatelessWidget {
     required this.price,
   });
 
+  @override
+  State<AlertKreditCard> createState() => _AlertKreditCardState();
+}
+
+class _AlertKreditCardState extends State<AlertKreditCard> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -120,9 +125,9 @@ class AlertKreditCard extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => Struck(
-                        title: title,
-                        type: type,
-                        price: int.parse(price),
+                        title: widget.title,
+                        type: widget.type,
+                        price: int.parse(widget.price),
                       ),
                     ),
                   );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_app/home_page.dart';
 
-class Struck extends StatefulWidget {
+class Struck extends StatelessWidget {
   final String title;
   final String type;
   final int price;
@@ -14,11 +14,6 @@ class Struck extends StatefulWidget {
     required this.price,
   });
 
-  @override
-  State<Struck> createState() => _StruckState();
-}
-
-class _StruckState extends State<Struck> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,14 +87,14 @@ class _StruckState extends State<Struck> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              widget.title,
+                              title,
                               style: GoogleFonts.poppins(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
                             Text(
-                              widget.type,
+                              type,
                               style: GoogleFonts.poppins(
                                 fontSize: 12,
                                 color: Colors.grey,
@@ -108,7 +103,7 @@ class _StruckState extends State<Struck> {
                           ],
                         ),
                         Text(
-                          "Rp. ${widget.price.toString()}",
+                          "Rp. ${price.toString()}",
                           style: GoogleFonts.poppins(
                             fontSize: 14,
                             fontWeight: FontWeight.w600,
@@ -130,7 +125,7 @@ class _StruckState extends State<Struck> {
                           ),
                         ),
                         Text(
-                          "Rp. ${widget.price.toString()}",
+                          "Rp. ${price.toString()}",
                           style: GoogleFonts.poppins(
                             fontSize: 14,
                             fontWeight: FontWeight.w700,

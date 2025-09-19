@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ticket_app/struck.dart';
 
-class AlertQris extends StatelessWidget {
+class AlertQris extends StatefulWidget {
   final String title;
   final String type;
   final String price;
@@ -14,6 +14,11 @@ class AlertQris extends StatelessWidget {
     required this.price,
   });
 
+  @override
+  State<AlertQris> createState() => _AlertQrisState();
+}
+
+class _AlertQrisState extends State<AlertQris> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -83,9 +88,9 @@ class AlertQris extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) => Struck(
-                        title: title,
-                        type: type,
-                        price: int.parse(price),
+                        title: widget.title,
+                        type: widget.type,
+                        price: int.parse(widget.price),
                       ),
                     ),
                   );
